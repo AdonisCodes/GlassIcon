@@ -1,4 +1,9 @@
 import akka.actor.typed.ActorSystem
+import akka.actor.typed.scaladsl.Behaviors
+import akka.http.scaladsl.Http
+import akka.http.scaladsl.server.Directives.{complete, get, path}
+import akka.http.scaladsl.server.Directives._
+
 
 // akka-http
 import scala.concurrent.{Await, ExecutionContext}
@@ -8,7 +13,8 @@ object Main {
   implicit val ec: ExecutionContext = ExecutionContext.global
 
   def main(args: Array[String]): Unit = {
-    implicit val actorSystem = ActorSystem(Behaviors.empty, "Glassicon")
+    // This needs typing, it will use the type of this type: Behaviors.empty
+    implicit val actorSystem:ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "Glassicon")
 
     val route = get {
       path("test") {
@@ -28,7 +34,7 @@ object Main {
     }
 
     serverBinding.onComplete {
-      case Success(binding) =>
+      case Success(_) =>
         sys.addShutdownHook {
           bindingFuture
             .flatMap(_.unbind())

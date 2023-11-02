@@ -1,4 +1,4 @@
-![GlassIcons](./assets/GlassIcons.png)
+![GlassIcons](./src/assets/GlassIcons.png)
 
 # Glassicon - The Glassy Identicon API
 

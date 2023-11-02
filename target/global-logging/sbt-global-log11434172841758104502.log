@@ -1,0 +1,23 @@
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to C:\Users\USER\Desktop\projects\Project-Vidi\microservices\GlassIcon - The Glassy Identicon3\target\scala-2.13\classes ...
+[error] C:\Users\USER\Desktop\projects\Project-Vidi\microservices\GlassIcon - The Glassy Identicon3\src\main\scala\Main.scala:12:44: not found: value Behaviors
+[error]     implicit val actorSystem = ActorSystem(Behaviors.empty, "Glassicon")
+[error]                                            ^
+[error] C:\Users\USER\Desktop\projects\Project-Vidi\microservices\GlassIcon - The Glassy Identicon3\src\main\scala\Main.scala:14:17: not found: value get
+[error]     val route = get {
+[error]                 ^
+[error] C:\Users\USER\Desktop\projects\Project-Vidi\microservices\GlassIcon - The Glassy Identicon3\src\main\scala\Main.scala:15:7: not found: value path
+[error]       path("test") {
+[error]       ^
+[error] C:\Users\USER\Desktop\projects\Project-Vidi\microservices\GlassIcon - The Glassy Identicon3\src\main\scala\Main.scala:19:9: not found: value complete
+[error]         complete(s"Hello World! $randomInt")
+[error]         ^
+[error] C:\Users\USER\Desktop\projects\Project-Vidi\microservices\GlassIcon - The Glassy Identicon3\src\main\scala\Main.scala:23:25: not found: value Http
+[error]     val bindingFuture = Http().newServerAt("localhost", 8080).bind(route)
+[error]                         ^
+[error] 5 errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 5 s, completed Nov 2, 2023, 2:57:32 AM
+[debug] > Exec(idea-shell, None, None)
