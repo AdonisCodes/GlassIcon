@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="akka-parsing_2.13-10.2.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/bg-jobs/sbt_8678ae4a/target/878162d8/1b909293/akka-parsing_2.13-10.2.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

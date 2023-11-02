@@ -1,0 +1,13 @@
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    .eye {
+      fill: black;
+      stroke: black;
+      stroke-width: 1;
+    }
+  </style>
+  <g transform="translate(50,50)">
+    <circle class="eye" cx="0" cy="0" r="20" />
+    <circle class="eye" cx="50" cy="0" r="20" />
+  </g>
+</svg>

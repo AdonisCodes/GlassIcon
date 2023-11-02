@@ -1,0 +1,29 @@
+ <svg viewBox="0 0 100 100">
+<style>
+  .eyeball {
+    fill: white;
+    stroke: black;
+    stroke-width: 1;
+  }
+
+  .iris {
+    fill: blue;
+    stroke: black;
+    stroke-width: 1;
+  }
+
+  .pupil {
+    fill: black;
+  }
+</style>
+<g transform="translate(50, 50)">
+  <circle class="eyeball" cx="0" cy="0" r="20" />
+  <circle class="iris" cx="0" cy="0" r="10" />
+  <circle class="pupil" cx="0" cy="0" r="5" />
+</g>
+<g transform="translate(100, 100)">
+  <circle class="eyeball" cx="0" cy="0" r="20" />
+  <circle class="iris" cx="0" cy="0" r="10" />
+  <circle class="pupil" cx="0" cy="0" r="5" />
+</g>
+</svg>

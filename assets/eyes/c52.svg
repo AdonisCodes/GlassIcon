@@ -1,0 +1,1 @@
+ <svg><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" /></filter></defs><ellipse cx="50" cy="50" rx="20" ry="60" fill="#555" filter="url(#goo)" /></svg>

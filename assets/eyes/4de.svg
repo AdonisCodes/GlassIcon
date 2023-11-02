@@ -1,0 +1,11 @@
+ <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50">
+<style>
+.eye {
+  fill: black;
+  stroke: black;
+  stroke-width: 1;
+}
+</style>
+<ellipse cx="25" cy="25" rx="10" ry="15" class="eye" />
+<ellipse cx="75" cy="25" rx="10" ry="15" class="eye" />
+</svg>

@@ -1,0 +1,14 @@
+ <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="eye-iris">
+      <circle cx="50" cy="50" r="30" />
+    </clipPath>
+    <linearGradient id="eye-gradient">
+      <stop offset="0%" stop-color="#000" />
+      <stop offset="100%" stop-color="#fff" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="40" fill="url(#eye-gradient)" />
+  <circle cx="50" cy="50" r="20" clip-path="url(#eye-iris)" fill="blue" />
+  <circle cx="50" cy="50" r="5" fill="black" />
+</svg>

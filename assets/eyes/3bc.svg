@@ -1,0 +1,7 @@
+ <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <g id="eyes">
+    <circle cx="100" cy="100" r="50" fill="blue" />
+    <circle cx="100" cy="100" r="25" fill="white" />
+    <circle cx="100" cy="100" r="10" fill="black" />
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+ <svg viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .mouth {
+        fill: red;
+        stroke: black;
+        stroke-width: 2;
+      }
+    </style>
+  </defs>
+  <path class="mouth" d="M30 60 C40 70, 60 70, 70 60" />
+</svg>

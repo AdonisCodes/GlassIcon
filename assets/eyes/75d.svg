@@ -1,0 +1,5 @@
+ Only 2 eyeballs please!
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50">
+  <rect width="20" height="10" x="40" y="20" fill="black" />
+  <rect width="20" height="10" x="60" y="20" fill="black" />
+</svg>
