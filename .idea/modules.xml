@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/glassicon-the-glassy-identicon_7228.iml" filepath="$PROJECT_DIR$/.idea/modules/glassicon-the-glassy-identicon_7228.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/glassicon-the-glassy-identicon_7228-build.iml" filepath="$PROJECT_DIR$/.idea/modules/glassicon-the-glassy-identicon_7228-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GlassIcon - The glassy Identicon.iml" filepath="$PROJECT_DIR$/.idea/modules/GlassIcon - The glassy Identicon.iml" />
     </modules>
   </component>
 </project>

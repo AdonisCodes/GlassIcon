@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="akka-http-core_2.13-10.2.4">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/target/bg-jobs/sbt_8678ae4a/target/95ed0dff/cb979581/akka-http-core_2.13-10.2.4.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

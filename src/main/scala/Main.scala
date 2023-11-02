@@ -1,12 +1,7 @@
-// akka
 import akka.actor.typed.ActorSystem
-import akka.actor.typed.scaladsl.Behaviors
-// akka-http
-import akka.http.scaladsl.Http
-import akka.http.scaladsl.model._
-import akka.http.scaladsl.server.Directives._
 
-import scala.concurrent.{ExecutionContext, Await}
+// akka-http
+import scala.concurrent.{Await, ExecutionContext}
 import scala.util.{Failure, Success}
 
 object Main {
