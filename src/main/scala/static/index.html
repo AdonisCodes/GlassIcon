@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GlassIcon - Aesthetic Icons</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #090909; /* Dark background color */
+            color: #fff; /* Text color */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            overflow-y: hidden;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #FF6B6B; /* Light primary color (pink) */
+        }
+
+
+        p {
+            font-size: 18px;
+            margin-top: -20px;
+        }
+
+        label {
+            color: #ffffff; /* Light primary color (orange) */
+            margin: 10px 0;
+        }
+
+        #search {
+            width: 200px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #444; /* Darker input background */
+            color: #fff; /* Text color */
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        #searchButton {
+            background-color: #FF6B6B; /* Light primary color (pink) */
+            color: #fff; /* Text color */
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #FF6B6B; /* Light primary color (pink) */
+            color: #fff; /* Text color */
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            width: 150px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .search-input {
+            margin: auto 0;
+        }
+
+        footer {
+            margin-bottom: 10px
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>GlassIcon</h1>
+    <p>The Aesthetic, but boring icons</p>
+</header>
+
+<!-- main -->
+<main>
+    <section class="search-input">
+        <label for="search"></label><input type="text" id="search" placeholder="Enter username" />
+    <button id="searchButton" onclick="onClick()">Search</button>
+    </section>
+
+    <h3 style="background: red;">Warning: App is not functional yet!</h3>
+    <section class="buttons">
+        <button onclick="navigateTo('docs')">Docs</button>
+        <button onclick="window.location.href = 'https://vidi.simonferns.com'">More</button>
+    </section>
+</main>
+
+
+<!-- footer -->
+<footer>
+    <h4>Made with ❤️ by <a href="https://github.com/AdonisCodes">AdonisCodes</a></h4>
+</footer>
+
+<script>
+    function onClick() {
+        const search = document.getElementById('search').value;
+        navigateTo(`icon?username=${search}`);
+    }
+
+    function navigateTo(path) {
+        window.location.href = window.location + '/' + path;
+    }
+</script>
+</body>
+</html>

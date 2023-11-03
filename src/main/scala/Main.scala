@@ -1,11 +1,9 @@
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.server.Directives.{complete, get, path}
 import akka.http.scaladsl.server.Directives._
+import akka.http.scaladsl.server.Route
 
-
-// akka-http
 import scala.concurrent.{Await, ExecutionContext}
 import scala.util.{Failure, Success}
 
@@ -14,16 +12,29 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     // This needs typing, it will use the type of this type: Behaviors.empty
-    implicit val actorSystem:ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "Glassicon")
+    implicit val actorSystem: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "Glassicon")
+
+    // Define a route for serving the "docs.html" file from the "static" directory
+    val staticFilesRoute: Route = pathPrefix("static") {
+      getFromResourceDirectory("static")
+    }
+
+    val homepageRoute: Route = pathEndOrSingleSlash {
+      getFromResource("static/index.html")
+    }
+
+    val docsRoute: Route = path("docs") {
+      getFromResource("static/docs.html")
+    }
 
     val route = get {
-      path("test") {
+      path("greetings") {
         val random = scala.util.Random
         val randomInt = random.nextInt(100)
 
         complete(s"Hello World! $randomInt")
       }
-    }
+    } ~ staticFilesRoute ~ homepageRoute ~ docsRoute
 
     val bindingFuture = Http().newServerAt("localhost", 8080).bind(route)
     val serverBinding = bindingFuture.map { binding =>
@@ -50,5 +61,4 @@ object Main {
       scala.concurrent.duration.Duration.Inf
     )
   }
-
 }
