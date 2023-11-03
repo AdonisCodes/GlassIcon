@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Endpoint 1",
+    "path": "/api/endpoint1",
+    "description": "This is the description of the first endpoint.",
+    "requestUrl": "https://example.com/api/endpoint1",
+    "requestHeaders": {
+      "Authorization": "Bearer <token>",
+      "Content-Type": "application/json"
+    },
+    "requestBody": {
+      "param1": "value1",
+      "param2": "value2"
+    },
+    "responseHeaders": {
+      "Content-Type": "application/json"
+    },
+    "responseBody": {
+      "status": "success",
+      "message": "Data retrieved successfully"
+    }
+  }
+]
