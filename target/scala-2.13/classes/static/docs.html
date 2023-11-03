@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Documentation</title>
+    <style>
+        /* Basic CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .endpoint {
+            margin: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .example {
+            margin: 10px 0;
+        }
+
+        .dropdown {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<h1>API Documentation</h1>
+
+<!-- Define a container to render endpoints -->
+<div id="endpoints">
+    <h2>API Endpoints</h2>
+    <ul id="endpointList">
+        <!-- JavaScript will populate this list from the JSON data -->
+    </ul>
+</div>
+
+<!-- JavaScript for toggling dropdowns and loading JSON data -->
+<script>
+    function toggleDropdown(id) {
+        let dropdown = document.getElementById(id);
+        if (dropdown.style.display === 'none') {
+            dropdown.style.display = 'block';
+        } else {
+            dropdown.style.display = 'none';
+        }
+    }
+
+    // Function to load data from /endpoints.json
+    function loadData() {
+        fetch('/static/endpoints.json')
+            .then(response => response.json())
+            .then(response => {
+                console.log(response)
+                return response
+            })
+            .then(data => {
+                const endpointList = document.getElementById('endpointList');
+                data.forEach((endpoint, index) => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = 'javascript:void(0)';
+                    a.onclick = () => toggleDropdown(`endpoint${index}`);
+                    a.textContent = endpoint.name;
+                    li.appendChild(a);
+                    endpointList.appendChild(li);
+
+                    const endpointDiv = document.createElement('div');
+                    endpointDiv.className = 'endpoint';
+                    endpointDiv.id = `endpoint${index}`;
+                    const h3 = document.createElement('h3');
+                    h3.textContent = endpoint.name;
+                    endpointDiv.appendChild(h3);
+                    const p = document.createElement('p');
+                    p.textContent = `Description: ${endpoint.description}`;
+                    endpointDiv.appendChild(p);
+
+                    // Request Details and Response Details here
+
+                    // Request and Response toggle buttons
+                    const requestExample = createExampleDiv(index, 'Request', `request${index}`, endpoint.requestBody);
+                    endpointDiv.appendChild(requestExample);
+
+                    const responseExample = createExampleDiv(index, 'Response', `response${index}`, endpoint.responseBody);
+                    endpointDiv.appendChild(responseExample);
+
+                    endpointList.appendChild(endpointDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);
+            });
+    }
+
+    // Function to create an example div with buttons and dropdown
+    function createExampleDiv(index, title, dropdownId, content) {
+        const exampleDiv = document.createElement('div');
+        exampleDiv.className = 'example';
+        const h4 = document.createElement('h4');
+        h4.textContent = title;
+        exampleDiv.appendChild(h4);
+        const requestButton = createButton(index, 'Request Body', `toggleDropdown('${dropdownId}')`);
+        exampleDiv.appendChild(requestButton);
+        const dropdown = createDropdown(dropdownId, content);
+        exampleDiv.appendChild(dropdown);
+        return exampleDiv;
+    }
+
+    // Function to create a button
+    function createButton(index, text, onclick) {
+        const button = document.createElement('button');
+        button.textContent = text;
+        button.onclick = new Function(onclick);
+        return button;
+    }
+
+    // Function to create a dropdown with content
+    function createDropdown(id, content) {
+        const dropdown = document.createElement('div');
+        dropdown.className = 'dropdown';
+        dropdown.id = id;
+        const h4 = document.createElement('h4');
+        h4.textContent = content.title;
+        dropdown.appendChild(h4);
+        const pre = document.createElement('pre');
+        pre.textContent = JSON.stringify(content, null, 2);
+        dropdown.appendChild(pre);
+        return dropdown;
+    }
+
+    // Load data when the page loads
+    loadData();
+</script>
+</body>
+</html>
